@@ -1,0 +1,6 @@
+type MinifiedProducts {
+    count: Int!
+    next: String
+    previous: String
+    results: [MinifiedProduct!]!
+}

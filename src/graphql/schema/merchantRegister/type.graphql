@@ -1,0 +1,24 @@
+type OtpToken {
+    token: String!
+}
+
+type Guild {
+    guild_list: [String!]
+}
+
+type CheckSub {
+    is_available: Boolean!
+}
+
+type CreateProfile {
+    auth: Token
+    bonus_familiarity: String
+    guild: String
+    id: ID!
+    name: String
+    province: String
+}
+
+type SendSmsForgetPasswordType {
+    is_forget_password: Boolean
+}

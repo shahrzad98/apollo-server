@@ -1,0 +1,4 @@
+type NotificationQuery {
+    getToken: OtpToken
+    getTokenPanel: OtpToken
+}

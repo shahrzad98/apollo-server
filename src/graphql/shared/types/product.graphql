@@ -1,0 +1,76 @@
+type Product {
+    id: ID!
+    name: String!
+    cost: Cost!
+    cost_avg: Int!
+    label: String!
+    description: String!
+    category: Category!
+    options: [String]
+    variants: [Variant!]!
+    images: [Image!]!
+    image: Image!
+    unit: Int
+    tax: Boolean!
+    is_service: Boolean!
+    cost_min: Int!
+    cost_max: Int!
+    fixed_cost: Int!
+    collection_ids: Void @deprecated
+    store: ID
+    modifiers: Void @deprecated
+    tags: [Tag!]!
+    features: [Feature!]!
+    average_score: Float!
+    feedback_count: Int!
+    mark: String
+    voter_number: Int!
+    weight: Int
+    online_package_amount: Int!
+    height: Int
+    width: Int
+    length: Int
+    chosen_image: Image
+    product_stock: Int!
+    has_stock: Boolean!
+    profit_percent: Float!
+    has_loyalty_gift: Boolean!
+    type_display: String
+    type: String
+    offline_visible: Boolean!
+    online_visible: Boolean!
+    is_active: Boolean!
+    is_favorite: Boolean!
+    slug: String
+}
+
+type Feature {
+    id: ID
+    title: String!
+    description: String!
+}
+
+type Cost {
+    cost: Int
+    primary_cost: Int
+}
+
+type MinifiedProduct {
+    id: ID!
+    label: String
+    min_variant: MinVariant
+    image: Image
+    main_image: Image
+    images: [Image]
+    hot_offer_expired_date: String
+    colors: [Color]
+    average_score: Float
+    has_stock: Boolean
+    orderable_count: Int
+}
+
+type Color {
+    id: ID!
+    value: String
+    color_code: String
+}

@@ -1,0 +1,82 @@
+type FilterPrimaries {
+    cities: [String]
+    min_cost: Int
+    max_cost: Int
+}
+
+type OrderStatus {
+    status: String
+    status_display: String
+    preparing_days: Int
+    owner_card_number: String
+    owner_card_name: String
+}
+
+type PostCartoonsInsurances {
+    cartoons: [String]
+    insurances: [String]
+}
+
+type PostProvincesCities {
+    cities: JSON
+    provinces: [PostProvincesCitiesProvince]
+}
+
+type PostProvincesCitiesProvince {
+    name: String
+}
+
+type PostexInfo {
+    username: String
+    password_state: String
+    first_name: String
+}
+
+type OrderSend {
+    address: Address
+    approximate_post_cost: Int # Todo: etelaat ersal hazine ersal merchant light
+    cached: Boolean
+    customer_shipping_cost: Int
+    has_access_to_printer: Boolean
+    is_morning_shift: Boolean
+    is_non_standard_package: Boolean
+    is_sms_service_active: Boolean
+    merchant_data: OrderSendMerchantData
+    merchant_shipping_cost: Int
+    need_cartoon: Boolean
+    pay_at_dest: Boolean
+    post_tracking_number: String
+    postex_username: String
+    receiver_first_name: String
+    receiver_last_name: String
+    receiver_phone_number: String
+    shipping_time_sending: Int
+    wallet_balance: Int
+    """
+    وزن محصول
+    """
+    weight: Int
+}
+
+type OrderSendMerchantData {
+    address: Address
+    first_name: String
+    last_name: String
+    phone_number: String
+}
+
+type OrderBriefs {
+    count: Int
+    next: String
+    previous: String
+    results: [OrderBrief]
+}
+
+type OrderBrief {
+    cost: Int
+    customer_first_name: String
+    customer_last_name: String
+    status: Int
+    id: ID
+    status_display: String
+}

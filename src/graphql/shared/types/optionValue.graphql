@@ -1,0 +1,13 @@
+type OptionValue {
+    id: ID!
+    value: String!
+    option: OptionValueOption!
+    color_code: String!
+}
+
+type OptionValueOption {
+    id: ID!
+    name: String!
+    is_color: Boolean!
+    store: ID!
+}

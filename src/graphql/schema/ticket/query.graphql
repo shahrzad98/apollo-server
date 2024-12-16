@@ -1,0 +1,5 @@
+type TicketQuery {
+    getTickets: [Ticket]
+    getAdminTickets(params: AdminTicketsParams): AdminTicket
+    getTicket(id: ID!): Ticket
+}

@@ -1,0 +1,33 @@
+type Address {
+    city: String
+    province: String
+    address: String!
+    no: Int
+    postal_code: String
+    id: ID!
+    unit_number: Int
+    description: String
+    receiver_name: String
+    receiver_lastname: String
+    receiver_number: String
+    name: String
+    longitude: String
+    latitude: String
+}
+
+type ShippingAddress {
+    id: ID!
+    name: String!
+    description: String!
+    time_sending: Int!
+    shipping_type: Int!
+    shipping_type_display: String
+    cost: Int!
+    shipping_delay: Int!
+    approximate_sending_date: ShippingAddressApproximateSendingDate
+}
+
+type ShippingAddressApproximateSendingDate {
+    start: String!
+    end: String!
+}

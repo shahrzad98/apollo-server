@@ -1,0 +1,82 @@
+type ShippingMethods {
+    count: Int
+    results: [ShippingMethod]
+    status_count: [StatusCount]
+}
+
+type ShippingMethod {
+    id: Int
+    name: String
+    is_active: Boolean
+    description: String
+    time_sending: Int
+    address: Address
+    cost: Int
+    shipping_type: Int
+    shipping_type_display: String
+    other_provinces_cost: Int
+    other_provinces_time_sending: Int
+    my_province_is_active: Boolean
+    other_provinces_is_active: Boolean
+    postex_username: String
+    pay_at_dest: Boolean
+    is_national_post_active: Boolean
+    chips_values: [String]
+    title_values: [String]
+}
+
+type StatusCount {
+    shipping_type: Int
+    total: Int
+}
+
+type ProvincesCities {
+    cities: JSON
+    provinces: [Province]
+}
+
+type Province {
+    name: String
+}
+
+type CreateShippingResponse {
+    id: Int
+    name: String
+    is_active: Boolean
+    description: String
+    time_sending: Int
+    cost: Int
+    store: Int
+    shipping_type: Int
+    shipping_type_display: String
+    other_provinces_cost: Int
+    other_provinces_time_sending: Int
+    my_province_is_active: Boolean
+    other_provinces_is_active: Boolean
+    postex_username: String
+    pay_at_dest: Boolean
+    is_national_post_active: Boolean
+    chips_values: [String]
+    title_values: [String]
+    address: Address
+}
+
+type NeshanCityResponse {
+    status: String
+    neighbourhood: String
+    municipality_zone: String
+    state: String
+    city: String
+    in_traffic_zone: Boolean
+    in_odd_even_zone: Boolean
+    route_name: String
+    route_type: String
+    district: String
+    formatted_address: String
+    place: String
+    village: String
+}
+
+type DigiExpressCities {
+    active_cities: [String]
+}

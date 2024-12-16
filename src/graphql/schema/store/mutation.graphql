@@ -1,0 +1,10 @@
+type StoreMutation {
+    editStoreData(content: storeFields): Void
+    updateStoreServiceDetail(storeId: ID!, content: StoreServiceDetailContent!): Void
+    patchSmsData(content: PatchSmsDataInput): StoreSmsData
+    chargeWallet(content: ChargeWalletInput): BuyPackageResult
+    updateCustomDomain(content: CustomDomainContent): Void
+    adminChargeWallet(content: AdminChargeWalletContent): Void
+    importDigikalaProducts(content: ImportDigikalaProductsContent): Void
+    activateTorob(content: ActivateTorobContent): Void
+}

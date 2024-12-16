@@ -1,0 +1,6 @@
+type UserMutation {
+    getToken(content: TokenContent!): Token
+    getCookie(content: TokenContent!): Token
+    clearCookie: Void
+    getRefreshToken(content: RefreshTokenContent!): AccessToken
+}

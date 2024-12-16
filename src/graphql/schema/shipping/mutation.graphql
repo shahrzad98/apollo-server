@@ -1,0 +1,5 @@
+type ShippingMutation {
+    createNewShipping(content: CreateShippingContent): CreateShippingResponse
+    editShipping(content: CreateShippingContent, id: ID!): CreateShippingResponse
+    deleteShipping(content: DeleteShippingContent): Void
+}

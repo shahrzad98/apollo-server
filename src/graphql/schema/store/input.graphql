@@ -1,0 +1,80 @@
+input BrandsParams {
+    offset: Int
+    limit: Int
+    name: String
+}
+
+input storeFields {
+    name: String
+    telephone_number: String
+    guild: String
+    store_address: StoreAddresss
+    first_name: String
+    last_name: String
+    email: String
+    phone_number: String
+    birthday: String
+    national_code: String
+    sheba_number: String
+    logo: String
+}
+
+input StoreAddresss {
+    address: String
+    province: String
+    city: String
+    postal_code: String
+    latitude: String
+    longitude: String
+}
+
+input StoresParams {
+    search: String
+    offset: Int
+    limit: Int
+    created_at_min: String
+    created_at_max: String
+    expire_date_max: String
+    expire_date_min: String
+    package_state: Int
+}
+
+input StoreServiceDetailContent {
+    gateway_type: Int
+    idpay_settlement_api_key: String!
+    idpay_wallet_id: String!
+    idpay_api_key: String!
+}
+
+input PatchSmsDataInput {
+    customer_sms_send: Boolean
+    report_sms_send: Boolean
+}
+
+input ChargeWalletInput {
+    amount: Int
+}
+
+input CustomDomainContent {
+    domain: String
+    storeId: String
+}
+
+input AdminChargeWalletContent {
+    store_id: ID
+    amount: Int
+}
+
+input ImportDigikalaProductsContent {
+    storeId: ID
+    seller_id: ID
+}
+
+input ActivateTorobContent {
+    store_id: ID
+}
+
+input StatisticsParams {
+    start_date: String
+    end_date: String
+}

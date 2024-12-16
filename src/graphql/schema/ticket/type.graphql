@@ -1,0 +1,32 @@
+type Ticket {
+    answer: String
+    answered_by: String
+    code: String
+    created_at: String!
+    id: ID!
+    issued_by: Int!
+    modified_at: String!
+    question: String!
+    solved_at: String
+    status: Int
+    status_display: String!
+    store: ID!
+    title: String!
+}
+
+type AdminTickets {
+    created_at: String
+    id: ID
+    question: String
+    title: String
+    store_name: String
+    user_phone_number: String
+    status: Int
+}
+
+type AdminTicket {
+    count: Int
+    next: String
+    previous: Int
+    results: [AdminTickets]
+}

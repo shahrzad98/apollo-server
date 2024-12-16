@@ -1,0 +1,66 @@
+type Variant {
+    id: ID!
+    sku: String @deprecated
+    cost: Int!
+    name: String!
+    note: String
+    stock: String!
+    orderable_count: Int!
+    images: [Image!]!
+    status: Int!
+    vendor: String
+    barcode: Int
+    is_active: Boolean
+    is_return: Boolean!
+    time_delay: Int!
+    margin_cost: Int
+    online_cost: Int!
+    is_unlimited: Boolean!
+    loyalty_gift: Int!
+    cost_expired_at: String
+    primary_cost: Int!
+    max_quantity: Int!
+    option_values: [OptionValue!]
+    online_primary_cost: Int!
+    product_serialized: ProductSerialized
+}
+
+type ProductSerialized {
+    id: ID!
+    name: String!
+    label: String!
+    category: Category
+    unit: Unit
+    images: [Image]
+    chosen_image: Image
+    average_score: Float!
+    description: String
+    online_package_amount: Int!
+    images_serialized: [Image]
+    is_service: Boolean
+    fixed_cost: Int
+    store: ID
+}
+
+type Unit {
+    id: ID!
+    name: String
+    unit_type: Int
+    precision: Int
+    store: ID!
+    unit_type_display: String
+}
+
+type MinVariant {
+    id: ID
+    cost: Int
+    stock: String
+    time_delay: Int
+    is_unlimited: Boolean
+    loyalty_gift: Int
+    primary_cost: Int
+    max_quantity: Int
+    profit_percent: Float
+    tax: Int
+    single_tax: Int
+}

@@ -1,0 +1,8 @@
+type ProductFilteringData {
+    min_stock: Int
+    max_stock: Int
+    min_cost: Int
+    max_cost: Int
+    max_primary_cost: Int
+    min_primary_cost: Int
+}

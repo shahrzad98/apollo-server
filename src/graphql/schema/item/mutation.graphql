@@ -1,0 +1,27 @@
+type ItemMutation {
+    createProduct(content: ProductContent): ProductMerchant
+    deleteProduct(id: ID!): Void
+    updateProduct(id: ID!, content: ProductContent): Void
+    partialUpdateProduct(id: ID!, content: ProductContent): Void
+
+    deleteCategory(id: ID!): Void
+    createCategory(content: CategoryContent): CategoryMerchant
+    updateCategory(id: ID!, content: CategoryContent): Void
+    partialUpdateCategory(id: ID!, content: CategoryContent): CategoryMerchant
+
+    deleteOptionValue(id: ID!): Void
+    createOptionValue(content: OptionValueContent): Void
+    updateOptionValue(id: ID!, content: OptionValueContent): Void
+    partialUpdateOptionValue(id: ID!, content: OptionValueContent): Void
+
+    deleteOption(id: ID!): Void
+    createOption(content: OptionContent): Void
+    updateOption(id: ID!, content: OptionContent): Void
+    uploadImage(file: Upload!): Image
+
+    partialUpdateVariant(id: ID!, content: VariantLiteInput): Void
+
+    createVoucher(content: VoucherContent): Void
+    partialUpdateVoucher(id: ID, content: VoucherContent): Void
+    deleteVoucher(id: ID): Void
+}

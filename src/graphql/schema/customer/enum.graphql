@@ -1,0 +1,33 @@
+enum AllowedStatuses {
+    CANCELED
+    SUBMITTED
+    PAID
+    CONFIRMED
+    SENT
+    RECEIVED
+    EXPIRED
+    PRE_ORDER_NOTIFIED
+}
+
+enum AllowedStatus {
+    WAITING_FOR_PAYMENT
+    PROCESSING
+    RECEIVED
+    RETURNED
+    CANCELED
+}
+
+enum AllowedNotificationType {
+    HOT_OFFER
+    PRODUCT_AVAILABLE
+}
+
+enum AllowedReceiveStatuses {
+    RECEIVED
+    UNRECEIVED
+}
+
+enum BreadcrumbType {
+    PRODUCT
+    CATEGORY
+}

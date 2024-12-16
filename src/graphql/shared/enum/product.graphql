@@ -1,0 +1,9 @@
+enum ProductOrderingType {
+    MOST_SALE
+    LEAST_SALE
+    NEWEST
+    OLDEST
+    COST_MIN
+    COST_MAX
+    MOST_DISCOUNT
+}

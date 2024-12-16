@@ -1,0 +1,16 @@
+input TicketContent {
+    question: String!
+    title: String!
+}
+
+input AdminTicketsParams {
+    offset: Int
+    limit: Int
+    search: String
+    created_at_min: String
+    created_at_max: String
+}
+
+input SeeTicketInput {
+    status: Int
+}

@@ -1,0 +1,352 @@
+input AddressContent {
+    id: ID
+    city: String!
+    province: String!
+    address: String!
+    no: Int
+    postal_code: String!
+    unit_number: Int!
+    description: String
+    receiver_name: String
+    receiver_lastname: String
+    receiver_number: String
+    name: String!
+    longitude: String
+    latitude: String
+}
+
+input CategoriesParams {
+    parent_id: ID
+    has_product: Boolean
+    parent_only: Boolean
+    limit: Int
+    offset: Int
+    all: Boolean
+}
+
+input LoyaltyLogsParams {
+    offset: Int
+    limit: Int
+}
+
+input ForgetPasswordContent {
+    password: String!
+    token: String!
+    phone_number: String!
+}
+
+input changePasswordContent {
+    password: String!
+    current_password: String!
+}
+
+input ChangePasswordWithoutOtpContent {
+    password: String
+    new_password: String!
+}
+
+input OTPSendContent {
+    phone_number: String!
+    is_forget_password: Boolean!
+}
+
+input GetTokenByOTPContent {
+    phone_number: String!
+    token: Int!
+}
+
+input GetTokenByOTPSingUpContent {
+    phone_number: String!
+    token: String!
+    set_cookie: Boolean
+}
+
+input OrdersParams {
+    limit: Int
+    offset: Int
+    statuses: AllowedStatuses
+    status: AllowedStatus
+}
+
+input OrderParams {
+    statuses: AllowedStatuses
+}
+
+input UpdateOrderAddContent {
+    address: Int!
+    shipping: Int!
+    status: Int!
+    items: [OrderAddItemsContent]
+    voucher_code: String
+    pocket: String
+    receiver_name: String
+    receiver_number: String
+    redirect_url: String
+    canceled_url: String
+    total_discount_cost: Int
+    pay_in_place: Boolean
+    loyalty: Int
+    expired_at: String
+    manual_discount: Int
+    customer_description: String
+}
+
+input UpdateBasketContent {
+    id: ID
+    basket_items: [BasketItemContent]
+    store: ID
+}
+
+input PartialUpdateBasketContent {
+    id: ID
+    basket_items: [BasketItemContent]
+    store: ID
+}
+
+# old version
+# input BasketItemContent {
+#     id: ID
+#     amount: Float!
+#     online_cost: Int
+#     online_primary_cost: Int
+#     variant: Int!
+# }
+
+input BasketItemContent {
+    id: ID
+    amount: Float!
+    online_cost: Int!
+    online_primary_cost: Int!
+    variant: ID!
+    orderable_count: Int
+    discount_amount: Int
+}
+
+input HotOffersParams {
+    limit: Int
+    offset: Int
+    ordering: ProductOrderingType
+}
+
+input ProfileContent {
+    phone_number: String
+    national_code: String
+    telephone_number: String
+    sheba_number: String
+    card_number: String
+    birthday: String
+    gender: String
+    marriage_date: String
+    token: String
+    first_name: String
+    last_name: String
+    email: String
+    password: String
+    new_password: String
+}
+
+input ReportAvailableContent {
+    email: String!
+    phone_number: String!
+    product: Int!
+}
+
+input ProductsParams {
+    limit: Int
+    offset: Int
+    category: String
+    is_active: Boolean
+    is_service: Boolean
+    fixed_cost: Float
+    store: ID
+    minimum_cost: Float
+    maximum_cost: Float
+    marks: String
+    categories: [String]
+    tags: String
+    has_stock: Boolean
+    has_discount: Boolean
+    collection: String
+    colors: String
+    tag_id: ID
+    online_visible: String
+    option_values: String
+    offline_visible: String
+    type: String
+    name: String
+    label: String
+    min_stock: String
+    max_stock: String
+    unlimited_stock: String
+    cost_gte: Float
+    cost_lte: Float
+    primary_cost_gte: Float
+    primary_cost_lte: Float
+    name_contains: String
+    label_contains: String
+    search: String
+    ordering: ProductOrderingType
+    custom_option_values: [String]
+    is_hot_offer: Boolean
+    product_ids: [String]
+}
+
+input ProductFilteringParams {
+    category: String
+    store: ID
+    minimum_cost: Int
+    maximum_cost: Int
+    marks: [String]
+    categories: String
+    tags: [String]
+    has_stock: Boolean
+    has_discount: Boolean
+    collection: String
+    colors: [String]
+    option_values: String
+    search: String
+}
+
+input UserNotifyContent {
+    product: ID!
+    notification_type: AllowedNotificationType!
+    sms_notify: Boolean!
+    email_notify: Boolean!
+    email: String
+    internal_notify: Boolean!
+}
+
+input SuggestionProductsParams {
+    offset: Int
+    limit: Int
+}
+
+input ProductFeedbackParams {
+    offset: Int
+    limit: Int
+    images_only: Boolean
+}
+
+input NotificationSettingContent {
+    product_available_sms_notify: Boolean!
+    product_available_email_notify: Boolean!
+    product_available_internal_notify: Boolean!
+    hot_offer_available_sms_notify: Boolean!
+    hot_offer_available_email_notify: Boolean!
+    hot_offer_available_internal_notify: Boolean!
+    receive_order_sms_notify: Boolean!
+    receive_order_email_notify: Boolean!
+    receive_order_internal_notify: Boolean!
+    order_invoice_sms_notify: Boolean!
+    order_invoice_email_notify: Boolean!
+    order_invoice_internal_notify: Boolean!
+    return_invoice_sms_notify: Boolean!
+    return_invoice_email_notify: Boolean!
+    return_invoice_internal_notify: Boolean!
+    survey_sms_notify: Boolean!
+    survey_email_notify: Boolean!
+    survey_internal_notify: Boolean!
+}
+
+input FavoritesParams {
+    offset: Int
+    limit: Int
+}
+
+input AddFavoriteListContent {
+    list_of_product_id: [ID!]!
+}
+
+input LoyaltyGiftContent {
+    items: [LoyaltyGiftItemsContent!]!
+}
+
+input LoyaltyGiftItemsContent {
+    id: ID
+    quantity: Int
+    selected_variant: LoyaltyGiftItemsSelectedVariantContent!
+}
+
+input BreadcrumbParams {
+    id: ID!
+    type: BreadcrumbType!
+}
+
+input LoyaltyGiftItemsSelectedVariantContent {
+    id: ID
+}
+
+input CreateStoreOpeningNotifierContent {
+    email: String
+    phone_number: String
+}
+
+input UpdateReceiveStatusContent {
+    status: AllowedReceiveStatuses!
+}
+
+input CreateOrderContent {
+    items: [OrderAddItemsContent!]!
+    voucher: ID
+    address: ID!
+    shipping: ID!
+    pocket: ID
+    # address: Int!
+    # shipping: Int!
+    # pocket: Int
+    redirect_url: String!
+    canceled_url: String!
+    gateway_type: Int!
+    use_loyalty: Boolean!
+    transaction_type: Int
+    receiver_name: String!
+    receiver_last_name: String!
+    receiver_number: String!
+    customer_description: String
+}
+
+input OrderAddItemsContent {
+    variant: ID!
+    unit_amount: Int!
+}
+
+input GatewayLinkUrlContent {
+    redirect_url: String!
+    canceled_url: String!
+}
+
+input ReturnOrderContent {
+    order: Int
+    items: [ReturnItemsContent]
+    phone_number: String
+    first_name: String
+    last_name: String
+    card_number: String
+}
+
+input ReturnItemsContent {
+    order_item: Int
+    reason: String
+    description: String
+    images: [String]
+}
+
+input ReturnParams {
+    offset: Int
+    limit: Int
+}
+
+input AdminAccessTokenInput {
+    refresh: String!
+}
+
+input blogArticlesParams {
+    offset: Int
+    limit: Int
+    search: String
+}
+
+input blogHighlightsParams {
+    offset: Int
+    limit: Int
+}

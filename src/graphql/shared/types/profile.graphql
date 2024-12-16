@@ -1,0 +1,17 @@
+type Profile {
+    id: ID!
+    phone_number: String!
+    address: [Address]
+    national_code: String
+    telephone_number: String
+    sheba_number: String
+    card_number: String
+    birthday: String
+    gender: Int
+    marriage_date: String
+    first_name: String
+    last_name: String
+    email: String
+    gender_display: String
+    granted: Boolean
+}

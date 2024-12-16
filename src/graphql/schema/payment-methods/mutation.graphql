@@ -1,0 +1,13 @@
+type PaymentMutation {
+    createNewPaymentMethod(content: CreatePaymentMethodContent): PaymentMethod
+    editPaymentMethod(content: CreatePaymentMethodContent, id: ID!): PaymentMethod
+    editPaymentMethodPut(content: CreatePaymentMethodContent, id: ID!): PaymentMethod
+    deletePaymentMethod(id: ID!): Void
+    editCardToCard(content: CreatePaymentMethodContent, id: ID!): PaymentMethod
+    createBehPardakht(content: CreateBehPardakhtContent): PaymentMethod
+    createZarrinPal(content: CreateZarrinPalContent): Void
+    verifyZarrinPalOTP(content: CheckZarrinPalOtpContent): Void
+    chooseExTerminalZarrinpal(content: ChooseZarrinPalTerminalContent): PaymentMethod
+    submitZarrinPalCreation: Void
+    uploadZarrinPalDocument(files: [Upload]): Void
+}

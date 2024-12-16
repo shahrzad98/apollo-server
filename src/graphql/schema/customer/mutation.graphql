@@ -1,0 +1,52 @@
+type CustomerMutation {
+    createAddress(content: AddressContent): Address!
+    deleteAddress(id: ID!): Void
+    partialUpdateAddress(id: ID!, content: AddressContent): Address!
+    updateAddress(id: ID!, content: AddressContent): Address!
+    forgetPassword(content: ForgetPasswordContent): Void
+    changePassword(content: changePasswordContent): Void
+    changePasswordWithoutOtp(content: ChangePasswordWithoutOtpContent): Void
+    otpSend(content: OTPSendContent): Void
+    otpSendV2(content: OTPSendContent): OTP!
+    otpSendSignup(content: GetTokenByOTPSingUpContent): Token!
+    getChangePasswordAuth(content: GetTokenByOTPContent): Auth!
+    cancelOrder(id: ID!): Void
+    cancelOrderV3(id: ID!): Void
+    updateOrderAdd(content: UpdateOrderAddContent): Order!
+    updateBasket(content: UpdateBasketContent, uuid: String): Basket!
+    partialUpdateBasket(content: PartialUpdateBasketContent, uuid: String): Basket!
+    createOrder(content: CreateOrderContent): Order!
+    updateReceiveStatus(id: ID!, content: UpdateReceiveStatusContent!): Void
+    createProfile(content: ProfileContent): Profile!
+    updateProfile(content: ProfileContent): Profile!
+    reportAvailable(content: ReportAvailableContent): Void
+    createUserNotify(content: UserNotifyContent): UserNotify!
+    deleteUserNotify(product_id: ID!): UserNotify!
+
+    addFavorite(id: ID!): Void
+    removeFavorite(id: ID!): Void
+    addFavoriteList(content: AddFavoriteListContent): Void
+
+    updateNotificationSetting(content: NotificationSettingContent): NotificationSetting!
+
+    createLoyaltyGift(content: LoyaltyGiftContent): LoyaltyGift!
+
+    createStoreOpeningNotifier(content: CreateStoreOpeningNotifierContent): Void
+
+    returnImage(file: Upload!): Image!
+
+    getGateway(id: ID, content: GatewayLinkUrlContent): Gateway!
+    # for module-develop:
+    # getGateway(content: GatewayLinkUrlContent!): Gateway
+
+    returnOrder(content: ReturnOrderContent): ReturnOrder!
+
+    paymentCard(orderId: ID!, image: Upload!): Void
+
+    createThemeCustomization(themeName: String, data: JSON): ThemeCustomization!
+
+    updateThemeCustomization(themeName: String, data: JSON): ThemeCustomization!
+    getAdminAccessToken(content: AdminAccessTokenInput!): AccessToken!
+
+    likeBlogArticle(id: ID!): Highlight!
+}

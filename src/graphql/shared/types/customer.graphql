@@ -1,0 +1,6 @@
+type Customer {
+    user: Int
+    name: String!
+    phone_number: String!
+    card_number: String
+}

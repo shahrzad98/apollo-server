@@ -1,0 +1,131 @@
+input ProductContent {
+    bonus_value: String
+    category: Int
+    change_log: String
+    chosen_image: String
+    description: String
+    features: [ProductContentFeatures]
+    fixed_cost: Int
+    height: Int
+    images: [String]
+    is_active: Boolean
+    is_service: Boolean
+    label: String
+    length: Int
+    mark: String
+    name: String
+    offline_visible: Boolean
+    online_package_amount: Int
+    online_visible: Boolean
+    seo_tags: [ID]
+    store: ID
+    tags: [ID]
+    tax: Boolean
+    type: String
+    unit: Int
+    variants: [ProductContentVariant]
+    weight: Int
+    width: Int
+}
+
+input ProductContentFeatures {
+    title: String
+    description: String
+}
+
+input ProductContentImage {
+    uuid: String!
+    id: ID
+}
+
+input ProductContentVariant {
+    cost: Int
+    cost_expired_at: String
+    image: String
+    imageItems: [ProductContentImage]
+    images: [String]
+    is_return: Boolean
+    is_unlimited: Boolean
+    max_quantity: Int
+    name: String
+    option_values: [Int]
+    primary_cost: Int
+    stock: Int
+    stock_alert: Int
+    time_delay: Int
+    vendor: Int
+}
+
+input OptionContent {
+    store: ID
+    name: String
+    values: [OptionContentValue]
+    is_color: Boolean
+}
+
+input OptionContentValue {
+    value: String
+}
+
+input OptionValueContent {
+    option: String
+    value: String
+    color_code: String
+}
+
+input OptionValueParams {
+    option: String
+    is_active: Boolean
+}
+
+input OptionParams {
+    is_active: Boolean
+}
+
+input ItemsBriefParams {
+    limit: Int,
+    offset: Int
+}
+
+input VariantLiteInput {
+    name: String
+    product: ID
+    barcode: String
+    sku: String
+    is_return: Boolean
+    time_delay: Int
+    cost: Int
+    primary_cost: Int
+    margin_cost: Int
+    stock: Int
+    note: String
+    status: Int
+    vendor: String
+    option_values: [Int]
+    is_active: Boolean
+    is_unlimited: Boolean
+    id: ID
+    cost_expired_at: String
+    weight: Int
+    images: [String]
+}
+
+input voucherParams {
+    start_date__date__gte: String
+    expire_date__date__lte: String
+    search: String
+    voucher_type: Int
+    limit: Int
+    offset: Int
+}
+
+input VoucherContent {
+    amount: String
+    customers: [String]
+    expire_date: String
+    limit: String
+    name: String
+    start_date: String
+    store: Int
+    voucher_type: Int
+}

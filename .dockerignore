@@ -1,0 +1,6 @@
+.git
+*.md
+.gitignore
+nodemon.json
+.prettierrc
+.eslintrc.json

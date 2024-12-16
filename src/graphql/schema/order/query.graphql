@@ -1,0 +1,17 @@
+type OrderQuery {
+    getManagers(params: ManagersParams): Orders
+    getManager(id: ID!): Order
+    getManagersFilterPrimaries: FilterPrimaries
+    getManagersStatusCount: StatusesCount
+    getOrderStatus(id: ID!): OrderStatus
+
+    getPostCartoonsInsurances: PostCartoonsInsurances
+    getPostProvincesCities(params: citiesParams): PostProvincesCities
+
+    getPostexInfo: PostexInfo
+
+    getOrderSend(id: ID!): OrderSend
+    getPostexPassword: Void
+
+    getOrdersBrief(params: ordersBriefParams): OrderBriefs
+}

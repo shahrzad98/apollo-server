@@ -1,0 +1,44 @@
+type Category {
+    id: ID!
+    title: String!
+    image: Image
+    store: ID
+    parent: ID
+    products: [Product]
+    discount: String
+    child_categories: [Category!]!
+    children: [Category]
+}
+
+type CategoryMerchant {
+    id: ID!
+    title: String!
+    image: Image
+    store: ID
+    parent: ID
+    products: [ProductMerchant]
+    discount: String
+    child_categories: [CategoryMerchant!]
+    children: [CategoryMerchant]
+}
+
+type BreadcrumbChild {
+    id: ID
+    title: String
+    image: Image
+    child: BreadcrumbChild
+}
+
+type Breadcrumb {
+    id: ID!
+    title: String!
+    image: Image
+    child: BreadcrumbChild
+}
+
+type Categories {
+    count: Int
+    next: String
+    previous: String
+    results: [Category]
+}

@@ -1,0 +1,9 @@
+{
+  "watch": [
+    "src"
+  ],
+  "ext": "ts, graphql",
+  "ignore": [],
+  "exec": "node --inspect -r ts-node/register ./src/index.ts",
+  "verbose": true
+}

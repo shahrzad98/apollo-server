@@ -1,0 +1,113 @@
+input CreatePackageContent {
+    name: String!
+    states: Int
+    package_type: Int
+    duration: Int
+    cost: Int!
+    #features: Void #Todo : check
+    is_active: Boolean
+}
+
+input CreatePurchasedPackageContent {
+    status: String!
+    cost: Int!
+    type: String!
+    renew: Boolean!
+    is_reserved: Boolean!
+}
+
+input CreateVoucherContent {
+    name: String!
+    code: String
+    package: [Int]
+    safir: Int
+    deadline: String
+    start_date: String
+    expire_date: String
+    is_active: Boolean
+    amount: Int
+    description: String
+    voucher_type: Int
+    voucher_method: Int
+    bound: Int
+}
+
+input CreateSafirContent {
+    first_name: String!
+    last_name: String!
+    code: String!
+    phone_number: String!
+    email: String!
+    is_active: Boolean
+    expire_date: String!
+    bound: Int
+}
+
+input purchasedPackagesInput {
+    status: Int
+    store: Int
+    package: Int
+    is_activated: Boolean
+    limit: Int
+    offset: Int
+}
+
+input PackagesBySafirsParams {
+    voucher__safir__code: String!
+    limit: Int
+    offset: Int
+}
+
+input PackagesByVoucherParams {
+    voucher__code: String!
+    limit: Int
+    offset: Int
+}
+
+input PackagesParams {
+    limit: Int
+    offset: Int
+}
+input VouchersParams {
+    limit: Int
+    offset: Int
+    safir: Int
+}
+
+input packageVoucherParams {
+    code: String
+    package: ID
+}
+
+input BuyPackageParams {
+    package: ID
+    is_reserved: Boolean
+    voucher: String
+}
+
+input ChargeSmsParams {
+    amount: Int
+}
+
+input FinancialDataParams {
+    minimum_amount: Int
+    maximum_amount: Int
+    created_at_start: String
+    created_at_end: String
+    status: Int
+    limit: Int
+    offset: Int
+    search: String
+}
+
+input PurchasePackagesParams {
+    offset: Int
+    limit: Int
+}
+
+input ReservedPackagesParams {
+    store: ID
+    is_reserved: Boolean
+    limit: Int
+    offset: Int
+}

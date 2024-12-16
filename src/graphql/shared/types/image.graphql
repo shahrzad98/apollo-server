@@ -1,0 +1,5 @@
+type Image {
+    id: ID!
+    uuid: String!
+    image: String!
+}

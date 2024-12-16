@@ -1,0 +1,8 @@
+input VoucherCheckContent {
+    code: String!
+    start_date: String
+    expire_date: String
+    limit: Int
+    amount: Int
+    voucher_type: String
+}

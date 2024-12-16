@@ -1,0 +1,265 @@
+type PackagesBySafirs {
+    count: Int!
+    next: String
+    previous: String
+    results: [PackagesBySafir]
+}
+type PackagesBySafir {
+    count: Int!
+    data: [PackagePurchased]!
+}
+type PacKagesByVouchers {
+    count: Int!
+    next: String
+    previous: String
+    results: [PacKagesByVoucher]
+}
+type PacKagesByVoucher {
+    count: Int!
+    safir: Safir!
+    data: [PackagePurchased]!
+}
+type PackagePurchaseds {
+    count: Int!
+    next: String
+    previous: String
+    results: [PackagePurchased]
+}
+type PackagePurchased {
+    id: Int!
+    package: Package!
+    status: Int!
+    store: Int!
+    cost: Int!
+    type: Int!
+    renew: Boolean!
+    is_activated: Boolean!
+    is_reserved: Boolean!
+}
+
+type Packages {
+    count: Int!
+    next: String
+    previous: String
+    results: [Package]
+}
+type Package {
+    id: ID!
+    name: String!
+    states: Int!
+    package_type: Int!
+    duration: Int!
+    cost: Int!
+    primary_cost: Int
+    features: Void #Todo : check
+    package_type_display: String!
+    is_active: Boolean!
+    renew_voucher: Boolean
+    renew_voucher_amount: Int
+    renew_voucher_type: Int
+    show_cost: Int
+}
+
+type Vouchers {
+    count: Int!
+    next: String
+    previous: String
+    results: [VoucherPackage]
+}
+type VoucherPackage {
+    id: ID!
+    name: String!
+    code: String!
+    package: [PackageSerialized]
+    safir: Int
+    deadline: String
+    expire_date: String!
+    start_date: String
+    is_active: Boolean
+    amount: Int!
+    description: String
+    voucher_type: Int!
+    voucher_method: Int
+    bound: Int!
+}
+type PackageSerialized {
+    name: String
+    id: ID
+}
+type Safirs {
+    count: Int!
+    next: String
+    previous: String
+    results: [Safir]
+}
+type Safir {
+    id: ID!
+    first_name: String!
+    last_name: String!
+    code: String!
+    phone_number: String
+    email: String!
+    is_active: Boolean!
+    expire_date: String!
+    bound: Int
+}
+type vouchersBySafirs {
+    count: Int!
+    next: String
+    previous: String
+    results: [vouchersBySafir]
+}
+type vouchersBySafir {
+    id: ID!
+    name: String
+    code: String
+    package: [PackageSerialized]
+    safir: ID!
+    safir_code: String
+    safir_first_name: String
+    safir_last_name: String
+    start_date: String
+    deadline: String
+    expire_date: String
+    is_active: Boolean
+    amount: Int
+    description: String
+    voucher_type: Int
+    voucher_method: Int
+    bound: Int
+}
+
+type CurrentPackage {
+    id: ID
+    package: CurrentPackageD
+    status: Int
+    start_date_time: String
+    end_date_time: String
+    store: ID
+    cost: Int
+    type: Int
+    renew: Boolean
+    is_activated: Boolean
+    is_reserved: Boolean
+    package_detail: PackageDetail
+    can_use_renew_voucher: Boolean
+}
+
+type PackageDetail {
+    cost: Int
+    name: String
+    index: Int
+    author: String
+    states: Int
+    duration: Int
+    package_type: Int
+}
+type CurrentPackageD {
+    id: ID
+    name: String
+    states: Int
+    package_type: Int
+    duration: Int
+    cost: Int
+    show_cost: Int
+    package_type_display: String
+    is_active: Boolean
+    renew_voucher: Boolean
+    renew_voucher_amount: Int
+    renew_voucher_type: Int
+}
+
+type PackageVoucher {
+    discount: Int
+}
+
+type BuyPackageResult {
+    charge_result: Boolean
+    token: String
+    invoice_id: String
+    gateway_type: String
+}
+
+type FinancialDatas {
+    count: Int
+    next: String
+    previous: String
+    results: [FinancialData]
+}
+
+type FinancialData {
+    amount: Int
+    created_at: String
+    main_amount: Int
+    reference_code: String
+    sms_cost: Int
+    status: Int
+    status_display: String
+    title: String
+    validity_rate: Int
+}
+
+type Payment {
+    amount: Int
+    belongs_to: Int
+    created_at: String
+    discount_amount: Int
+    direction: Int
+    due_at: String
+    expired_at: String
+    fulfilled_at: String
+    id: ID
+    invoice_id: String
+    main_amount: Int
+    payable_id: Int
+    payable_type: Int
+    payment_type: Int
+    reference_code: String
+    status: Int
+    store: ID
+    tax_amount: Int
+}
+
+type PurchasePackagesResult {
+    cost: Int
+    end_date_time: String
+    id: ID
+    is_reserved: Boolean
+    package: Package
+    payment: [Payment]
+    renew: Boolean
+    start_date_time: String
+    status: Int
+    store: StoreInfo
+    voucher: Voucher
+    type: Int
+}
+
+type PurchasePackages {
+    count: Int
+    next: String
+    previous: String
+    results: [PurchasePackagesResult]
+}
+
+type ReservedPackages {
+    count: Int
+    next: String
+    previous: String
+    results: [ReservedPackage]
+}
+
+type ReservedPackage {
+    cost: Int
+    created_at: String
+    end_date_time: String
+    id: ID
+    is_reserved: Boolean
+    package: CurrentPackageD
+    payment: [Payment]
+    renew: Boolean
+    renew_voucher_amount: Int
+    start_date_time: String
+    status: Int
+    type: Int
+}

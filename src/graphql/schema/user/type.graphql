@@ -1,0 +1,127 @@
+type UserInfo {
+    id: ID!
+    first_name: String
+    last_name: String
+    username: String
+    phone_number: String
+    email: String
+    store_id: ID
+}
+
+type UserCheck {
+    result: Boolean!
+}
+
+type UserRead {
+    is_store_manager: Boolean
+    is_brand_manager: Boolean
+    my_store: [UserReadMyStore]
+    my_brand: UserReadMyBrand
+    is_superuser: Boolean
+    permissions: [String]
+    has_trial: Boolean
+    role: Int
+    sms_credit: Int
+    sms_cost: Int
+    role_display: Void
+    open_packages: [UserReadOpenPackages]
+    has_active_purchase_package: Boolean
+}
+
+type UserReadMyStore {
+    id: ID
+    first_name: String
+    last_name: String
+    phone_number: String
+    email: String
+    name: String
+    address: String
+    birthday: String
+    national_code: String
+    telephone_number: String
+    city: String
+    province: String
+    social_media: Void
+    tax: Boolean
+    personel: Int
+    sheba_number: String
+    end_time_work: String
+    start_time_work: String
+    info: String
+    bonus_percent: Int
+    ecommerce: UserReadMyStoreEcommerce
+    pos: UserReadMyStorePos
+    loyalty: String
+    store_address: StoreAddress
+    purchase_package: [ID]
+    personel_display: String
+    guild: String
+    agent_phone_number: String
+    postal_code: String
+    is_new_bonus: Boolean
+    is_loyalty_enabled: Boolean
+    crisp_token_id: String
+    ray_chat_token: String
+    ray_chat_enabled: Boolean
+    logo: Image
+}
+
+type StoreAddress {
+    id: ID
+    province: String
+    city: String
+    address: String
+    postal_code: String
+    longitude: String
+    latitude: String
+}
+
+type UserReadMyStoreEcommerce {
+    id: Int
+    expire_date: String
+    domain: String
+    cover: Image
+    is_domain_confirmed: Boolean
+    is_cash_acceptable: Boolean
+    is_open: Boolean
+    is_active: Boolean
+    full_sub_domain_path: String
+}
+
+type UserReadMyStorePos {
+    id: ID
+    start_time_work: String
+    end_time_work: String
+    expire_date: String
+    is_active: Boolean
+    money_unit: String
+    money_unit_display: String
+}
+
+type UserReadMyBrand {
+    id: ID
+    name: String
+}
+
+type UserReadOpenPackages {
+    id: ID!
+    store: Void @deprecated
+    package: UserReadOpenPackagesPackage
+    status: Int
+    start_date_time: String
+    end_date_time: String
+    cost_paid: Int
+    type: Int
+    assigned: Boolean
+}
+
+type UserReadOpenPackagesPackage {
+    id: ID!
+    name: String
+    states: Int
+    package_type: Int
+    duration: Int
+    cost: Int
+    features: Void @deprecated
+    package_type_display: String
+}

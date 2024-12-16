@@ -1,0 +1,5 @@
+type UserQuery {
+    userCheck(phoneNumber: String!): UserCheck
+    getUserInfo: UserInfo
+    getUserRead: UserRead
+}

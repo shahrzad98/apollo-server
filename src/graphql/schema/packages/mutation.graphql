@@ -1,0 +1,21 @@
+type PackagesMutation {
+    createPackage(content: CreatePackageContent): Void
+    deletePackage(id: ID!): Void
+    partialUpdatePackage(id: ID!, content: CreatePackageContent): Void
+    updatePackage(id: ID!, content: CreatePackageContent): Void
+    createPurchasedPackage(content: CreatePurchasedPackageContent): Void
+    deletePurchasedPackage(id: ID!): Void
+    partialUpdatePurchasedPackage(id: ID!, content: CreatePurchasedPackageContent): Void
+    updatePurchasedPackage(id: ID!, content: CreatePurchasedPackageContent): Void
+    createVoucher(content: CreateVoucherContent): Void
+    deleteVoucher(id: ID!): Void
+    partialUpdateVoucher(id: ID!, content: CreateVoucherContent): VoucherPackage
+    updateVoucher(id: ID!, content: CreateVoucherContent): Void
+    createSafir(content: CreateSafirContent): Void
+    deleteSafir(id: ID!): Void
+    partialUpdateSafir(id: ID!, content: CreateSafirContent): Void
+    updateSafir(id: ID!, content: CreateSafirContent): Void
+    checkPackageVoucher(params: packageVoucherParams): PackageVoucher
+    buyPackage(content: BuyPackageParams): BuyPackageResult
+    chargeSms(content: ChargeSmsParams): BuyPackageResult
+}

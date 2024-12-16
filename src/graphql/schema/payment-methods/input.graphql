@@ -1,0 +1,51 @@
+input CreatePaymentMethodContent {
+    first_name: String
+    last_name: String
+    card_number: String
+    gateway_type: Int
+    is_active: Boolean
+    cancel_duration_for_approve_order: Int
+    card_to_card_customer_payment_duration: Int
+    card_to_card_working_in_holidays: Boolean
+    sheba_number: String
+    address: String
+    postal_code: Int
+    birthday: String
+    phone_number: String
+    telephone_number: String
+    email: String
+    national_code: String
+    bpm_username: String
+    bpm_password: String
+    bpm_terminal_id: String
+    username: String
+    password: String
+    client_id: String
+    secret_key: String
+}
+
+input CreateBehPardakhtContent {
+    behpardakht_username: String!
+    behpardakht_password: String!
+    behpardakht_terminalId: String!
+    gateway_type: Int
+}
+
+input CreateZarrinPalContent {
+    first_name: String!
+    last_name: String!
+    phone_number: String!
+}
+
+input CheckZarrinPalOtpContent {
+    token: Int!
+    phone_number: String!
+}
+
+input ChooseZarrinPalTerminalContent {
+    terminal_id: ID!
+}
+
+input PaymentMethodDetailParams {
+    id: ID!
+}

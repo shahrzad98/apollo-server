@@ -1,0 +1,8 @@
+type ShippingQuery {
+    getShippingMethods(param: ShippingMethodsParam): ShippingMethods
+    getShippingMethodDetail(param: ShippingDetailParam): ShippingMethod
+    getProvincesCities(param: ProvincesCitiesParam): ProvincesCities
+    getNeshanCity(param: NeshanCityParam): NeshanCityResponse
+    getDigiExpressActiveCities: DigiExpressCities
+    sendPostexSms: JSON
+}

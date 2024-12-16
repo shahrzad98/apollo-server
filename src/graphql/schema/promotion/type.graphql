@@ -1,0 +1,17 @@
+type Voucher {
+    id: ID
+    code: String
+    start_date: String
+    expire_date: String
+    limit: Int
+    amount: Int
+    voucher_type: Int
+    voucher_type_display: String
+    bound: Int
+    deadline: String
+    description: String
+    is_active: Boolean
+    name: String
+    safir: String
+    voucher_method: Int
+}

@@ -1,0 +1,12 @@
+type StoreQuery {
+    getBrands(params: BrandsParams): Brands
+    getHomeData: HomeData
+    getStores(params: StoresParams): Stores
+    getStoreDetail(storeId: ID!): StoreDetail
+    getStoreServiceDetail(storeId: ID!): StoreServiceDetail
+    getSmsData: StoreSmsData
+    getWalletData: WalletData
+    getStorePassword(phoneNumber: String): Void
+    exportStoresExcel(params: StoresParams): Void
+    getStatistics(params: StatisticsParams): JSON
+}

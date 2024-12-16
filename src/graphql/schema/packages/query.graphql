@@ -1,0 +1,17 @@
+type PackagesQuery {
+    getPackages(params: PackagesParams): Packages
+    getPackage(id: ID!): Package
+    getPurchasedPackages(params: purchasedPackagesInput): PackagePurchaseds
+    getPurchasedPackage(id: ID!): PackagePurchased
+    getVouchers(params: VouchersParams): Vouchers
+    getVoucher(id: ID!): Voucher
+    getSafirs(params: PackagesParams): Safirs
+    getSafir: Safir
+    getPackagesBySafirs(params: PackagesBySafirsParams): PackagesBySafirs
+    getPackagesByVoucher(params: PackagesByVoucherParams): PacKagesByVouchers
+    getVouchersOfSafirs(params: VouchersParams): vouchersBySafirs
+    getCurrentPackage: CurrentPackage
+    getFinancialData(params: FinancialDataParams): FinancialDatas
+    getPurchasePackages(params: PurchasePackagesParams): PurchasePackages
+    getReservedPackages(params: ReservedPackagesParams): ReservedPackages
+}

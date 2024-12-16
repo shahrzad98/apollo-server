@@ -1,0 +1,7 @@
+type Pocket {
+    cost: Int
+    id: ID
+    is_active: Boolean
+    name: String
+    store: ID
+}

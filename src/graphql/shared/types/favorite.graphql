@@ -1,0 +1,36 @@
+type Favorites {
+    count: Int!
+    results: [Favorite]
+    next: String
+    previous: String
+}
+type Favorite {
+    id: ID!
+    name: String
+    label: String
+    description: String
+    category: [Category]
+    variants: [Variant]
+    images: [Image]
+    unit: Int!
+    tax: Boolean!
+    is_service: Boolean
+    fixed_cost: Int!
+    store: ID!
+    tags: [Tag]
+    collection_ids: Void @deprecated
+    features: [Feature]
+    average_score: Float!
+    mark: String
+    voter_number: Int
+    weight: Int!
+    online_package_amount: Int!
+    height: Int!
+    width: Int!
+    length: Int!
+    chosen_image: Image @deprecated
+}
+
+type IsFavorite {
+    is_favorite: Boolean!
+}

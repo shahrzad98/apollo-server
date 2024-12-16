@@ -1,0 +1,9 @@
+type MerchantRegisterMutation {
+    otpSend(content: MerchantRegisterOTPSendContent): Void
+    validateOtpToken(content: ValidateOtpTokenContent): OtpToken
+    createProfile(content: CreateMerchantProfileContent): CreateProfile
+    checkSub(domain: String!): CheckSub
+    sendSmsForgetPassword(content: SendOtpForgetPasswordContent): SendSmsForgetPasswordType
+    merchantCheckOtp(content: CheckOtpContent): Void
+    changePasswordRegister(content: ChangePasswordRegisterContent): Void
+}

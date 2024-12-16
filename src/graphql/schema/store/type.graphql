@@ -1,0 +1,117 @@
+type Brands {
+    count: Int
+    next: String
+    previous: String
+    results: [Brand]
+}
+
+type Brand {
+    name: String
+    phone_number: String
+    first_name: String
+    last_name: String
+    email: String
+    guild: String
+    created_at: String
+}
+
+type HomeData {
+    sms_charge: Int
+    initial_sms_charge: Int
+    expire_date: String
+    recharge_date: String
+    products_count: Int
+    orders_count: Int
+    customers_count: Int
+    name: String
+    logo: LogoHome
+}
+
+type LogoHome {
+    id: ID
+    uuid: String
+    image: String
+}
+
+type Store {
+    brand_guild: String
+    brand_identifier_code: String
+    brand_manager_first_name: String
+    brand_manager_last_name: String
+    brand_manager_phone_number: String
+    brand_name: String
+    id: ID
+    name: String
+    created_at: String
+    products_count: Int
+    domain: String
+    ecommerce_expire_date: String
+}
+type StoreDetail {
+    id: ID
+    name: String
+    created_at: String
+    brand_manager_phone_number: String
+    brand_name: String
+    brand_manager_first_name: String
+    brand_manager_last_name: String
+    brand_guild: String
+    brand_identifier_code: String
+    domain: String
+    ecommerce_expire_date: String
+    package_state: Int
+    e_namad: Boolean
+    products_count: Int
+    variants_count: Int
+    gateways_info: [StoreGateway]
+    shippings: [StoreShipping]
+    ray_chat_enabled: Boolean
+    orders_count: Int
+    customers_count: Int
+    torob_is_active: Boolean
+}
+
+type StoreShipping {
+    id: ID
+    name: String
+    is_active: Boolean
+    shipping_type: Int
+}
+
+type StoreGateway {
+    is_default: Boolean
+    is_active: Boolean
+    gateway_type: Int
+    id: ID
+}
+
+type Stores {
+    count: Int
+    next: String
+    previous: String
+    results: [Store]
+}
+
+type StoreServiceDetail {
+    gateway_type: Int
+    brand_name: String
+    id: ID
+    idpay_api_key: String
+    idpay_settlement_api_key: String
+    idpay_wallet_id: String
+    name: String
+}
+
+type StoreSmsData {
+    id: ID
+    report_sms_send: Boolean
+    customer_sms_send: Boolean
+    sms_charge: Int
+    sms_count: Int
+    initial_sms_count: Int
+    sms_cost: Int
+}
+
+type WalletData {
+    amount: Int
+}

@@ -1,0 +1,15 @@
+type Collection {
+    id: ID!
+    store: ID!
+    name: String!
+    tags: [Tag]
+    products: [Product]
+}
+
+type CollectionV2 {
+    id: ID!
+    store: ID!
+    name: String!
+    tags: [Tag]
+    products: [MinifiedProduct]
+}

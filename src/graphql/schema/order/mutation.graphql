@@ -1,0 +1,11 @@
+type OrderMutation {
+    updateManager(id: ID!, content: ManagerContent!): Void
+    partialUpdateManager(id: ID!, content: ManagerContent!): Void
+    updateManagerReceiveStatus(id: ID!, content: ReceiveStatusContent!): Void
+    updateOrderStatus(id: ID!, content: OrderStatusContent): Void
+    partialUpdateOrderStatus(id: ID!, content: OrderStatusContent): Void
+    partialUpdatePostexInfo(content: PostexContent): Void
+    updateOrderSend(id: ID!, content: orderSendContent): JSON
+    cancelShipping(id: ID): Void
+    chargeAloPeykWallet(content: ChargeAlopeykContent): BuyPackageResult
+}

@@ -1,0 +1,13 @@
+type Query {
+    user: UserQuery!
+    ticket: TicketQuery
+    customer: CustomerQuery!
+    merchantRegister: MerchantRegisterQuery
+    notification: NotificationQuery
+    packages: PackagesQuery
+    order: OrderQuery
+    item: ItemQuery
+    store: StoreQuery
+    shipping: ShippingQuery
+    payment: PaymentQuery
+}

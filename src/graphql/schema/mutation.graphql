@@ -1,0 +1,14 @@
+type Mutation {
+    user: UserMutation!
+    ticket: TicketMutation
+    customer: CustomerMutation!
+    merchantRegister: MerchantRegisterMutation
+    notification: NotificationMutation
+    promotion: PromotionMutation
+    packages: PackagesMutation
+    order: OrderMutation
+    store: StoreMutation
+    item: ItemMutation
+    shipping: ShippingMutation
+    payment: PaymentMutation
+}

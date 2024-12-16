@@ -1,0 +1,192 @@
+type Option {
+    id: ID
+    store: ID
+    name: String
+    values: [OptionValue]
+    is_color: Boolean
+}
+
+type ItemBriefs {
+    count: Int
+    next: String
+    previous: String
+    results: [ItemBrief]
+}
+
+type ItemBrief {
+    label: String
+    primary_cost: Int
+    stock: Int
+    unlimited_variant_count: Int
+    id: ID
+    image: ItemBriefImage
+    is_active: Boolean
+}
+
+type ItemBriefImage {
+    id: ID
+    image: String
+    uuid: String
+}
+
+type ProductMerchant {
+    id: ID!
+    name: String
+    cost: Cost
+    cost_avg: Int
+    label: String
+    description: String
+    category: JSON
+    options: [String]
+    variants: [Variant]
+    images: [Image]
+    image: Image
+    unit: Int
+    tax: Boolean
+    is_service: Boolean
+    cost_min: Int
+    cost_max: Int
+    fixed_cost: Int
+    collection_ids: Void @deprecated
+    store: ID
+    modifiers: Void @deprecated
+    tags: [Tag]
+    features: [Feature]
+    average_score: Float
+    feedback_count: Int
+    mark: String
+    voter_number: Int
+    weight: Int
+    online_package_amount: Int
+    height: Int
+    width: Int
+    length: Int
+    chosen_image: Image
+    product_stock: Int
+    has_stock: Boolean
+    profit_percent: Float
+    has_loyalty_gift: Boolean
+    type_display: String
+    type: String
+    offline_visible: Boolean
+    online_visible: Boolean
+    is_active: Boolean
+    is_favorite: Boolean
+    slug: String
+}
+
+type ProductsLite {
+    count: Int!
+    next: String
+    previous: String
+    results: [ProductMerchant]
+    filtering_data: ProductFilteringData
+}
+
+type VariantLite {
+    name: String
+    product: ID
+    barcode: String
+    sku: String
+    is_return: Boolean
+    time_delay: Int
+    cost: Int
+    primary_cost: Int
+    margin_cost: Int
+    stock: Int
+    note: String
+    status: Int
+    vendor: String
+    option_values: [OptionValueLite]
+    is_active: Boolean
+    is_unlimited: Boolean
+    id: ID
+    cost_expired_at: String
+    weight: Int
+    images: [Image]
+}
+
+type OptionValueLite {
+    option: OptionLite
+    value: String
+    id: ID
+    color_code: String
+}
+
+type OptionLite {
+    id: Int
+    is_active: Boolean
+    name: String
+    is_color: Boolean
+}
+
+type filterPrimariesProduct {
+    categories: [CategoryMerchant]
+    min_stock: Int
+    max_stock: Int
+    min_cost: Int
+    max_cost: Int
+    min_primary_cost: Int
+    max_primary_cost: Int
+}
+
+type CategoriesLite {
+    count: Int
+    previous: String
+    next: String
+    results: [CategoryLite]
+}
+
+type CategoryLite {
+    id: ID
+    store: ID
+    title: String
+    parent: ID
+    discount: String
+    image: Image
+    child_categories: [childCategoryLite]
+    products: [categoryProduct]
+}
+
+type categoryProduct {
+    cost: Int
+    id: ID
+    images: [Image]
+    label: String
+}
+
+type childCategoryLite {
+    id: ID
+    store: ID
+    title: String
+    parent: ID
+    discount: String
+    image: Image
+    products: [categoryProduct]
+}
+
+type VouchersLite {
+    count: Int
+    next: String
+    previous: String
+    results: [VoucherLite]
+}
+type VoucherLite {
+    amount: Int
+    can_use: Boolean
+    code: String
+    customer_type: String
+    customer_type_display: String
+    customers: [String]
+    description: String
+    expire_date: String
+    id: Int
+    is_active: Boolean
+    limit: Int
+    name: String
+    start_date: String
+    store: Int
+    usage_peak: Int
+    voucher_type: Int
+    voucher_type_display: String
+}

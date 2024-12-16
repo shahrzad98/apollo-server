@@ -1,0 +1,51 @@
+input ShippingDetailParam {
+    id: ID!
+}
+
+input ProvincesCitiesParam {
+    type: Int
+}
+
+input ShippingMethodsParam {
+    limit: Int
+    offset: Int
+}
+
+input CreateShippingContent {
+    name: String
+    shipping_type: Int
+    cost: String
+    address: LatLngAddress
+    phone_number: String
+    email: String
+    first_name: String
+    last_name: String
+    pay_at_dest: Boolean
+    other_provinces_cost: String
+    time_sending: Int
+    other_provinces_time_sending: Int
+    my_province_is_active: Boolean
+    other_provinces_is_active: Boolean
+    is_active: Boolean
+    national_code: String
+    cost_method: String
+    other_provinces_cost_method: String
+}
+
+input LatLngAddress {
+    address: String
+    latitude: String
+    longitude: String
+    postal_code: String
+    city: String
+    province: String
+}
+
+input NeshanCityParam {
+    lat: String
+    lng: String
+}
+
+input DeleteShippingContent {
+    id: ID!
+}

@@ -1,0 +1,7 @@
+type TicketMutation {
+    createTicket(content: TicketContent): Ticket
+    deleteTicket(id: ID!): Void
+    partialUpdateTicket(id: ID!, content: TicketContent): Ticket
+    updateTicket(id: ID!, content: TicketContent): Ticket
+    seeTicket(id: ID!, content: SeeTicketInput): Ticket
+}

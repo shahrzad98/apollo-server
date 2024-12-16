@@ -1,0 +1,5 @@
+type NotificationMutation {
+    seenNotif(id: [ID!]!): Void
+    deleteNotif(id: [ID!]!): Void
+    getBusinessWsToken: OtpToken
+}

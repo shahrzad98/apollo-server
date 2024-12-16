@@ -1,0 +1,20 @@
+type ItemQuery {
+    getProducts(params: ProductsParams): ProductsLite
+    getProduct(id: ID!): ProductMerchant
+    getCategories(params: CategoriesParams): CategoriesLite
+    getCategory(id: ID!): CategoryLite
+
+    getOptions(params: OptionParams): [Option]
+    getOption(id: ID!): Option
+
+    getOptionValues(params: OptionValueParams): [OptionValue]
+    getOptionValue(id: ID!): OptionValue
+    getItemsBrief(params: ItemsBriefParams): ItemBriefs
+
+    getVariant(id: ID!): VariantLite
+
+    getProductsFilterPrimsMerchant: filterPrimariesProduct
+
+    getVouchers(params: voucherParams): VouchersLite
+    getVoucher(id: ID): VoucherLite
+}

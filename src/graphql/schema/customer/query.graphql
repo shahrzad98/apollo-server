@@ -1,0 +1,86 @@
+type CustomerQuery {
+    getAddresses: [Address]!
+    getSitemap: String!
+    getAddress(id: ID!): Address!
+    getShippingAddresses(address_id: ID!): [ShippingAddress]!
+    getShippingAddress(address_id: ID!, id: ID!): ShippingAddress!
+
+
+
+    getBasket(uuid: String): Basket!
+
+    getCategories(params: CategoriesParams): Categories!
+    getCategory(id: ID!, params: CategoriesParams): Category!
+    getBreadcrumb(params: BreadcrumbParams): Breadcrumb!
+
+    getCollections: [Collection]!
+    getCollectionsWithProducts: [Collection]!
+    getCollectionsWithProductsV2: [CollectionV2]!
+    getCollection(id: ID!): Collection!
+
+    getTags: [Tag]!
+    getTag(id: ID!): Tag!
+
+    getFavorites(params: FavoritesParams): Favorites!
+    getFavoritesV2(params: FavoritesParams): MinifiedProducts!
+    getFavorite(id: ID!): Favorite!
+    getFavoriteV2(id: ID!): Favorite!
+    isFavorite(id: ID!): IsFavorite!
+
+    getOrders(params: OrdersParams): Orders!
+    getOrdersV3(params: OrdersParams): UserOrders!
+    getOrder(id: ID!, params: OrderParams): Order!
+    getOrderV3(id: ID!): UserOrder!
+    getReturnedOrder(id: ID!): ReturnOrder!
+    getOrderAdd: Order!
+    getReceiveStatus(id: ID!): ReceiveStatus!
+
+    getHotOffers(params: HotOffersParams): HotOffers!
+    getHotOffer(id: ID!, params: HotOffersParams): Product!
+
+    getAppearance: Appearance!
+
+    getProfile: Profile!
+
+    getProducts(params: ProductsParams): MinifiedProducts!
+    getProductsOrHotoffers(params: ProductsParams): MinifiedProducts!
+    getProduct(id: ID!, params: ProductsParams): Product!
+    productFiltering(params: ProductsParams): ProductFiltering!
+
+    reportAvailable(params: ReportAvailableContent): Void
+
+    getUserNotify(id: ID!, params: AllowedNotificationType): UserNotify!
+
+    getLoyaltyLogs(params: LoyaltyLogsParams): LoyaltyLogs!
+
+    getStoreInfo: StoreInfo!
+
+    getSuggestionProducts(product_id: ID!, params: SuggestionProductsParams): MinifiedProducts!
+
+    getProductFeedback(product_id: ID!, params: ProductFeedbackParams): ProductFeedbacks!
+
+    getNotificationSetting: NotificationSetting!
+    getOnlineStoreNotification: [OnlineStoreNotification]!
+    getNotificationToken: NotificationToken!
+    getPocket: [Pocket]!
+
+    getLoyaltyCredit(id: ID!): LoyaltyCredit!
+    getLoyaltyCreditV2: LoyaltyCredit!
+
+    getVariantsStock(ids: [ID!]!): [VariantsStock]!
+
+    getReturnOrders(params: ReturnParams): ReturnOrders!
+    getPaymentMethods: [CustomerPaymentMethod]!
+
+    getTransactionTypes: [TransactionTypes]!
+
+    getThemeCustomization(themeName: String): ThemeCustomization!
+
+    getUserType: UserType!
+
+    getBlogArticles(params: blogArticlesParams): Articles!
+    getBlogArticle(id: ID!): Article!
+    getBlogHighlights(params: blogHighlightsParams): Highlights!
+    getShippingSokect(address_id: ID!): [ShippingAddress]!
+
+}

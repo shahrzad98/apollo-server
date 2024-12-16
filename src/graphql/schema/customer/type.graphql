@@ -1,0 +1,526 @@
+# type Basket {
+#     cartList: [CartList]
+# }
+type Basket {
+    id: ID!
+    basket_items: [BasketItem!]!
+    store: Int!
+    temp_id: String
+}
+
+type BasketItem {
+    amount: Int
+    cost: Int
+    cost_change: Int
+    bonus_value: Int
+    has_loyalty: Boolean
+    discount_amount: Int
+    id: ID!
+    image: Image
+    is_unlimited: Boolean
+    loyalty_gift: Int
+    max_quantity: Int
+    online_cost: Int
+    online_primary_cost: Int
+    option_values: [OptionValue]
+    primary_cost: Int
+    product_label: String
+    orderable_count: Int
+    stock: String
+    variant_id: String
+    variant_name: String
+    tax: Boolean
+    product_id: String!
+    single_tax: Int
+}
+
+type BasketVariant {
+    id: ID!
+    name: String!
+    stock: String
+    images: [Image]
+    status: Int!
+    barcode: Int
+    is_active: Boolean
+    is_return: Boolean
+    time_delay: Int!
+    online_cost: Int!
+    is_unlimited: Boolean
+    loyalty_gift: Int
+    cost_expired_at: String
+    max_quantity: Int!
+    option_values: [OptionValue]
+    online_primary_cost: Int
+    product_serialized: ProductSerialized
+}
+
+type CartList {
+    id: ID!
+    tax: Boolean!
+    name: String!
+    tags: [Int!]
+    type: Int!
+    unit: Int!
+    label: String!
+    images: [Image]
+    category: Int!
+    quantity: Int!
+    variants: [Variant]
+    is_active: Boolean!
+    fixed_cost: Int!
+    is_service: Boolean!
+    bonus_value: Int!
+    description: String!
+    buyableStock: Int!
+    type_display: String!
+    online_visible: Boolean!
+    available_stock: Boolean!
+    offline_visible: Boolean!
+    selected_variant: [Variant]
+}
+
+type OTP {
+    is_forget_password: Boolean
+    is_register: Boolean
+}
+
+type Auth {
+    auth: String!
+}
+
+type HotOffers {
+    count: Int!
+    next: String
+    previous: String
+    results: [MinifiedProduct]
+}
+
+type Appearance {
+    id: ID!
+    theme: AppearanceTheme
+}
+
+type AppearanceTheme {
+    id: ID!
+    name: Int!
+    is_luxury: Boolean!
+    product_card_type_display: Int!
+    mobile_hot_offer_show: Boolean!
+    images: [HeroImage]
+    category_type: Int!
+    more_about_type: Int!
+    hot_offer_type: Int!
+    product_card_type: Int!
+    category_type_display: String!
+    hot_offer_type_display: String!
+    more_about_type_display: String!
+    name_display: String!
+    hot_offer_gradient_type_display: String!
+    primary_color: String!
+    second_primary_color: String!
+    discount_color: String!
+    hot_offer_persian_title: String!
+    hot_offer_gradient_color: String!
+    hot_offer_gradient_type: Int!
+    header_category_show: Boolean!
+}
+
+type HeroImage {
+    id: ID!
+    uuid: String
+    image: String!
+    url: String!
+}
+
+type UserNotifyProduct {
+    id: Int
+    label: String
+}
+
+type UserNotify {
+    email: String
+    email_notify: Boolean
+    id: ID
+    product: UserNotifyProduct
+    internal_notify: Boolean
+    notification_type: Int
+    sms_notify: Boolean
+    user: ID
+}
+
+type LoyaltyLogs {
+    count: Int!
+    next: String
+    previous: String
+    results: [LoyaltyLog!]!
+}
+
+type LoyaltyLog {
+    id: ID!
+    created_at: String!
+    amount: Int!
+    data: LoyaltyLogData
+    log_type_display: String!
+    account_credit: Int!
+    reason: String
+    order_cost: Int
+}
+
+type LoyaltyLogData {
+    game: Int
+}
+
+type StoreInfo {
+    id: ID!
+    name: String!
+    store_address: StoreAddress!
+    logo: Image
+    telephone_number: String!
+    tax: Boolean!
+    ray_chat_token: String!
+    brand: Int!
+    social_media: SocialMedia
+    rating_score: Float!
+    info: String!
+    personel: Int!
+    end_time_work: String
+    start_time_work: String
+    phone_number: String!
+    first_name: String!
+    last_name: String!
+    email: String!
+    ecommerce: Ecommerce!
+    guild: String!
+    earning: Earning!
+    is_earning_loyalty_active: Boolean!
+    ray_chat_enabled: Boolean!
+    hotjar_token: String!
+    google_analytics_token: String!
+}
+
+type StoreAddress {
+    id: ID
+    province: String!
+    city: String!
+    address: String!
+    postal_code: String
+    longitude: String!
+    latitude: String!
+    no: Int
+    unit_number: Int
+}
+
+type SocialMedia {
+    twitter: String!
+    facebook: String!
+    linkedin: String!
+    telegram: String!
+    whatsapp: String!
+    instagram: String!
+}
+
+type Ecommerce {
+    expire_date: String!
+    domain: String!
+    cover: Image
+    show_special_offer: Boolean!
+    show_product_comments: Boolean!
+    show_last_buy: Boolean!
+    show_category_in_menu: Boolean!
+    is_cash_acceptable: Boolean!
+    is_open: Boolean!
+    about_us: String!
+    about_returns: String!
+    shipping_guide: String!
+    last_buy: String
+    e_namad_reference_link: String!
+    e_namad_img_src: String!
+    e_namad_img_id: String!
+    e_namad_meta_content: String!
+    show_digify_logo: Boolean!
+}
+
+type Earning {
+    game_type: Int!
+    value: Int!
+    limit: Int!
+    game_type_display: String!
+}
+
+type ProductFeedbacks {
+    count: Int!
+    next: String
+    previous: String
+    results: [ProductFeedback!]!
+}
+
+type ProductFeedback {
+    score: Int!
+    description: String!
+    reply: String!
+    images: [Image!]!
+    created_at: String!
+    first_name: String!
+    last_name: String!
+    variant: Variant!
+}
+
+type NotificationSetting {
+    id: ID!
+    product_available_sms_notify: Boolean!
+    product_available_email_notify: Boolean!
+    product_available_internal_notify: Boolean!
+    hot_offer_available_sms_notify: Boolean!
+    hot_offer_available_email_notify: Boolean!
+    hot_offer_available_internal_notify: Boolean!
+    receive_order_sms_notify: Boolean!
+    receive_order_email_notify: Boolean!
+    receive_order_internal_notify: Boolean!
+    order_invoice_sms_notify: Boolean!
+    order_invoice_email_notify: Boolean!
+    order_invoice_internal_notify: Boolean!
+    return_invoice_sms_notify: Boolean!
+    return_invoice_email_notify: Boolean!
+    return_invoice_internal_notify: Boolean!
+    survey_sms_notify: Boolean!
+    survey_email_notify: Boolean!
+    survey_internal_notify: Boolean!
+}
+
+type OnlineStoreNotification {
+    action_id: ID
+    button: String
+    content: String
+    date: JSON
+    is_seen: Boolean
+    product_id: OnlineStoreNotificationProductId
+    notif_type: Int
+    order_id: Int
+    section: String
+    store_id: ID
+    title: String
+    url: String
+    user_id: ID
+    _id: JSON
+}
+
+type OnlineStoreNotificationProductId {
+    variant__product_id: ID
+}
+
+type NotificationToken {
+    token: String
+}
+
+type LoyaltyCredit {
+    id: ID!
+    loyalty_credit: Float!
+}
+
+type LoyaltyGift {
+    items: [LoyaltyGiftItems]
+    earning_gift: Int!
+}
+
+type LoyaltyGiftItems {
+    id: ID!
+    quantity: Int!
+    selected_variant: LoyaltyGiftItemsSelectedVariant!
+}
+
+type LoyaltyGiftItemsSelectedVariant {
+    id: ID!
+}
+
+type VariantsStock {
+    id: ID!
+    stock: Int!
+    is_unlimited: Boolean!
+    orderable_count: Int!
+}
+
+type ProductFiltering {
+    marks: [[String]]!
+    available_maximum_cost: Int!
+    colors: [[String!]!]!
+    options: [ProductFilteringOptions!]!
+    categories: [[String]]!
+    has_stock: [Boolean]!
+    has_discount: [Boolean]!
+    minimum_cost: Int!
+    maximum_cost: Int!
+    custom_categories: [Category!]!
+}
+
+type ProductFilteringOptions {
+    name: String!
+    option_values: [[String!]!]!
+}
+
+type ReceiveStatus {
+    status: Int!
+    status_display: String!
+}
+
+type Gateway {
+    gateway_link: String
+}
+
+type UserOrderItemsDetailVariant {
+    cost: Int!
+    cost_expired_at: String
+    id: ID!
+    images: [Image]
+    is_return: Boolean
+    name: String
+    online_cost: Int
+    online_primary_cost: Int
+    option_values: [OptionValue]
+    primary_cost: Int
+    product_serialized: ProductSerialized
+    time_delay: Int
+}
+
+type UserOrderItemsDetail {
+    variant: UserOrderItemsDetailVariant!
+}
+
+type UserOrderItems {
+    details: UserOrderItemsDetail!
+    id: ID!
+    single_cost: Int!
+    unit_amount: Int!
+    variant_image: Image
+}
+
+type ReturnsID {
+    id: Int
+    status: Int
+    reference_code: String
+    created_at: String
+}
+
+type UserOrder {
+    address: Address!
+    cost: Int!
+    created_at: String!
+    customer_shipping_cost: Int!
+    approximate_sending_date: ApproximateSendingDate
+    id: ID!
+    items: [UserOrderItems!]!
+    order_description: String!
+    pocket: Pocket
+    pocket_cost: Int!
+    post_tracking_number: String!
+    received_at: String
+    receiver_last_name: String!
+    receiver_name: String!
+    receiver_number: String!
+    reference_code: String!
+    returns: ReturnsID
+    loyalty_amount: Int!
+    tax: Int!
+    registration_type: Int!
+    shipping: Shipping!
+    shipping_time_count: Int
+    total_discount_cost: Int!
+    total_items_cost: Int!
+    status: Int!
+    previous_status: Int
+    owner_card_name: String!
+    owner_card_number: String!
+    cancellation_reason: String
+    expired_at: String!
+    is_finished: Boolean!
+    received_by_customer: Boolean!
+    can_return_request: Boolean!
+}
+
+type UserOrders {
+    count: Int
+    next: String
+    previous: String
+    results: [UserOrder!]!
+    status_count: [OrderStatusCount]
+    returns_count: Int
+}
+
+type TransactionTypes {
+    card_number: String
+    gateway_type: Int
+    is_active: Boolean
+    is_default: Boolean
+    persian_gateway_type: String
+}
+
+type CustomerPaymentMethod {
+    is_active: Boolean
+    gateway_type: Int
+    is_default: Boolean
+    card_number: String
+    persian_gateway_type: String
+}
+
+type ThemeCustomization {
+    id: ID
+    theme: ID
+    data: JSON
+    is_active: Boolean
+    created_at: String
+    modified_at: String
+    name: String
+    ecommerce: ID
+}
+
+type UserType {
+    type: String
+}
+
+type Articles {
+    count: Int!
+    next: String
+    previous: String
+    results: [Article!]!
+}
+
+type Article {
+    id: Int!
+    title: String!
+    content: String!
+    published_at: String!
+    view_count: Int!
+    tags: [ArticleTag!]!
+    store: Int!
+    category: [ArticleCategory!]!
+    image: String!
+    is_active: Boolean!
+    is_liked: Boolean!
+    like_count: Int!
+    is_highlight: Boolean!
+    slug: String!
+}
+
+type ArticleTag {
+    id: Int!
+    title: String!
+}
+
+type ArticleCategory {
+    id: Int!
+    title: String!
+    parent: Int
+    store: Int
+}
+
+type Highlights {
+    count: Int!
+    next: String
+    previous: String
+    results: [Highlight!]!
+}
+
+type Highlight {
+    id: Int!
+    article: Article!
+    store: Int!
+}

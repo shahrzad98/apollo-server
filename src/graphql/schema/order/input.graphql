@@ -1,0 +1,107 @@
+input ManagersParams {
+    limit: Int
+    offset: Int
+    order_type: String
+    is_pre_order: Boolean
+    created_at: String
+    modified_at: String
+    cost: String
+    reference_code: String
+    without_return: String
+    sent_at: String
+    status: String
+    created_at_min: String
+    created_at_max: String
+    province: String
+    min_cost: Float
+    max_cost: Float
+    city: String
+    cities: [String]
+    days_upto_deadline: String
+    shipping_time: String
+    min_shipping_time: String
+    max_shipping_time: String
+    payment_types: String
+    preparing_day: String
+    statuses: [OrderStatusEnum]
+    search: String
+}
+
+input ManagerContent {
+    address: String
+    status: String
+    shipping: String
+    return_order: Void
+    description: String
+    tax: Float
+    pocket: String
+    is_seen: Boolean
+    confirmed_at: String
+    sent_at: String
+    prepare_deadline: String
+    owner_card_number: String
+    owner_card_name: String
+}
+
+input ReceiveStatusContent {
+    status: String!
+}
+
+input OrderStatusContent {
+    status: Int
+    put_back_items: Boolean
+    preparing_days: Int
+    cancellation_reason: String
+    owner_card_number: String
+    owner_card_name: String
+}
+
+input PostexContent {
+    username: String
+    password_state: String
+    first_name: String
+    password: String
+}
+
+input orderSendContent {
+    receiver_first_name: String
+    receiver_last_name: String
+    address: AddressInput
+    receiver_phone_number: String
+    insurance_name: String
+    cartoon_size: String
+    need_cartoon: Boolean
+    weight: Int
+    pickup_date: String
+    is_morning_shift: Boolean
+    merchant_shipping_cost: Int
+    cashed: Boolean
+    has_access_to_printer: Boolean
+    pay_at_dest: Boolean
+    transport_type: Int
+    is_non_standard_package: Boolean
+    is_sms_service_active: Boolean
+}
+
+input AddressInput {
+    address: String
+    city: String
+    province: String
+    postal_code: String
+    latitude: String
+    longitude: String
+}
+
+input citiesParams {
+    post_type: Int
+}
+
+input ordersBriefParams {
+    limit: Int
+    offset: Int
+}
+
+input ChargeAlopeykContent {
+    amount: Int
+    shipping_type: String
+}

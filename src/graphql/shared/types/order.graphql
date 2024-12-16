@@ -1,0 +1,198 @@
+type Orders {
+    count: Int
+    next: String
+    previous: String
+    results: [Order]
+    status_count: [OrderStatusCount!]!
+    returns_count: Int!
+}
+
+type Order {
+    id: ID
+    is_seen: Boolean
+    reference_code: String
+    tax: Int
+    items: [OrderItems]
+    cost: Int
+    order_description: String
+    customer: Customer
+    days_upto_deadline: Int
+    total_primary_cost: Int
+    order_weight: Int
+    fa_registration_type: String
+    created_at: String
+    return_status: String
+    address: Address
+    shipping: Shipping
+    total_items_cost: Int
+    receiver_name: String
+    receiver_last_name: String
+    receiver_number: String
+    shipping_time_count: Int
+    loyalty_amount: Int
+    total_profit: Int
+    expired_at: String
+    gift_amount: Int
+    pre_loyalty_cost: Int
+    deadline_date: String
+    pay_in_place: Boolean
+    has_returns: Boolean
+    manual_discount: Int
+    returns: Returns
+    customer_shipping_cost: Int
+    shipping_cost: Int
+    pocket_cost: Int
+    weight: Float
+    order_uuid: String
+    payment: [OrderPayment]
+    customer_description: String
+    description: String
+    pocket: Pocket
+    gateway_link: String
+    pocket_name: String
+    post_tracking_number: String
+    approximate_sending_date: ApproximateSendingDate
+    status_classification: String
+    is_finished: Boolean
+    registration_type: Int
+    owner_card_name: String
+    owner_card_number: String
+    confirmed_at: String
+    order_type: Int
+    modified_at: String
+    order_type_display: String
+    post_status: String
+    prepare_deadline: String
+    second_receiver_information: Void
+    preparing_days: Int
+    previous_status: Int
+    sent_at: String
+    voucher_details: Void
+    shipping_support_number: String
+    status: Int
+    status_display: String
+    total_discount_cost: Int
+    tracking_url: String
+    shipping_type: String
+    transaction_type: Int
+    gateway_type: Int
+
+    received_at: String
+    courier_info: CourierInfo
+    shipping_name: String
+}
+
+type CourierInfo {
+    id: ID
+    email: String
+    phone: String
+    avatar: AlopeykAvatar
+    lastname: String
+    firstname: String
+    is_online: Boolean
+    rates_avg: String
+    abs_avatar: AlopeykAvatar
+    last_online: String
+    plate_number: String
+    referral_code: String
+}
+
+type AlopeykAvatar {
+    url: String
+    abs_url: String
+    base64_url: String
+}
+
+type OrderStatusCount {
+    status: Int!
+    total: Int!
+}
+
+type OrderItems {
+    id: ID
+    unit_amount: Float
+    images: [Image]
+    product_images: [Image]
+    details: OrderItemsDetail
+}
+
+type OrderPayment {
+    transactions: [OrderPaymentTransactions]
+}
+
+type OrderPaymentTransactions {
+    mount: Int
+    card_bills: [OrderPaymentTransactionsCardBills]
+    card_number: String
+    date: String
+    reference_number: String
+    type: Int
+    type_display: String
+}
+
+type OrderPaymentTransactionsCardBills {
+    created_at: String
+    description: String
+    image: String
+}
+
+type OrderItemsDetail {
+    variant: Variant
+}
+
+type StatusesCount {
+    status_count: [StatusCount]
+    returns_count: Int
+    all: Int
+}
+
+type StatusCount {
+    status: Int
+    total: Int
+}
+
+type Returns {
+    id: ID!
+    status: Int
+    reference_code: String
+    order_reference_code: String
+    created_at: String
+    items: [ReturnsItems]
+    status_display: String
+    order_created_at: String
+    first_name: String
+    last_name: String
+    phone_number: String
+    card_number: String
+    total_returned_cost: Int
+}
+
+type ReturnsItems {
+    id: ID
+    status_display: String
+    reason: String
+    returned_cost: Int
+    count: Int
+    status: Int
+    description: String
+    reply_reason: String
+    reply_description: String
+    relative_voucher_amount: Int
+    order_item: ReturnsOrderItem
+    images: [Image]
+}
+
+type ReturnsOrderItem {
+    id: ID
+    details: OrderItemsDetail
+    single_cost: Int
+    single_primary_cost: Int
+    single_tax: Int
+    single_profit: Int
+    product_label: String
+}
+
+type ApproximateSendingDate {
+    start: String
+    end: String
+}

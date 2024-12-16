@@ -1,0 +1,47 @@
+type ReturnOrder {
+    id: ID!
+    status: Int!
+    reference_code: String!
+    order_reference_code: String!
+    created_at: String!
+    items: [ReturnItem!]!
+    status_display: String!
+    order_created_at: String!
+    first_name: String!
+    last_name: String!
+    phone_number: String!
+    card_number: String!
+    total_returned_cost: Int!
+}
+
+type ReturnOrders {
+    count: Int
+    next: String
+    previous: String
+    results: [ReturnOrder]
+}
+
+type ReturnItem {
+    id: ID!
+    status: Int!
+    status_display: String!
+    reason: String!
+    returned_cost: Int!
+    count: Int!
+    description: String!
+    reply_reason: String!
+    reply_description: String!
+    relative_voucher_amount: Int!
+    order_item: ReturnOrderItem!
+    images: [Image!]!
+}
+
+type ReturnOrderItem {
+    id: ID
+    details: OrderItemsDetail
+    single_cost: Int
+    single_primary_cost: Int
+    single_tax: Int
+    single_profit: Int
+    product_label: String
+}

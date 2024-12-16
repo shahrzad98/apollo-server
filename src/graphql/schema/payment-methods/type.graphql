@@ -1,0 +1,52 @@
+type PaymentMethod {
+    first_name: String
+    last_name: String
+    email: String
+    phone_number: String
+    national_code: String
+    birthday: String
+    province: String
+    city: String
+    address: String
+    sheba_number: String
+    postal_code: String
+    telephone_number: String
+    store: Int
+    is_default: Boolean
+    is_active: Boolean
+    gateway_type: Int
+    id: Int
+    card_number: String
+    gateway_type_display: String
+    is_confirmed: Boolean
+    have_access: Boolean
+    cancel_duration_for_approve_order: Int
+    card_to_card_customer_payment_duration: Int
+    card_to_card_working_in_holidays: Boolean
+    is_basic_info_confirmed: String
+    is_identity_info_confirmed: String
+    is_gateway_confirmed: String
+    level: String
+    behpardakht_username: String
+    behpardakht_password: String
+    behpardakht_terminalId: String
+    username: String
+    password: String
+    client_id: String
+    secret_key: String
+}
+
+type ZarrinPalStatus {
+    level: String
+    active_terminals: [ZarrinPalTerminal]
+    is_basic_info_confirmed: String
+    is_identity_info_confirmed: String
+    is_gateway_confirmed: String
+    phone_number: String
+}
+
+type ZarrinPalTerminal {
+    id: ID
+    domain: String
+    name: String
+}

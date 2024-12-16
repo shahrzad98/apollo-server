@@ -1,0 +1,7 @@
+input CategoryContent {
+    title: String
+    store: String
+    parent: ID
+    image: String
+    discount: String
+}

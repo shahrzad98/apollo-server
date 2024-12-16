@@ -1,0 +1,7 @@
+input TokenContent {
+    username: String!
+    password: String!
+}
+input RefreshTokenContent {
+    refresh: String!
+}
